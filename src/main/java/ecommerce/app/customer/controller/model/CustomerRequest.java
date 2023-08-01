@@ -1,18 +1,21 @@
-package ecommerce.app.customer.controller;
+package ecommerce.app.customer.controller.model;
+
+import com.google.gson.Gson;
 
 public class CustomerRequest {
+    private static final Gson gson = new Gson();
     private String firstName;
     private String lastName;
     private String email;
     private String phoneNumber;
     private short birthDate;
-    private String gender;
-    private String country;
+    private Gender gender;
+    private String country;//technically should be enum
 
     public CustomerRequest() {
     }
 
-    public CustomerRequest(String firstName, String lastName, String email, String phoneNumber, short birthDate, String gender, String country) {
+    public CustomerRequest(String firstName, String lastName, String email, String phoneNumber, short birthDate, Gender gender, String country) {
         this.firstName = firstName;
         this.lastName = lastName;
         this.email = email;
@@ -62,11 +65,11 @@ public class CustomerRequest {
         this.birthDate = birthDate;
     }
 
-    public String getGender() {
+    public Gender getGender() {
         return gender;
     }
 
-    public void setGender(String gender) {
+    public void setGender(Gender gender) {
         this.gender = gender;
     }
 
@@ -76,5 +79,10 @@ public class CustomerRequest {
 
     public void setCountry(String country) {
         this.country = country;
+    }
+
+    @Override
+    public String toString() {
+        return gson.toJson(this);
     }
 }

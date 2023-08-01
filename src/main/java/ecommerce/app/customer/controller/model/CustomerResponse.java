@@ -1,4 +1,4 @@
-package ecommerce.app.customer.controller;
+package ecommerce.app.customer.controller.model;
 
 public class CustomerResponse extends CustomerRequest {
     private String id;
@@ -6,7 +6,7 @@ public class CustomerResponse extends CustomerRequest {
     public CustomerResponse() {
     }
 
-    public CustomerResponse(String id, String firstName, String lastName, String email, String phoneNumber, short birthDate, String gender, String country) {
+    public CustomerResponse(String id, String firstName, String lastName, String email, String phoneNumber, short birthDate, Gender gender, String country) {
         super(firstName, lastName, email, phoneNumber, birthDate, gender, country);
         this.id = id;
     }
